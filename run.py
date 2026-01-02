@@ -4,6 +4,8 @@ from app import create_app
 # Get config from environment variable (default: development)
 config_name = os.getenv('FLASK_ENV', 'development')
 app = create_app(config_name)
+# Add this for Vercel/Production
+application = app
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
